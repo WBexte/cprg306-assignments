@@ -6,5 +6,5 @@ export default function ShoppingList() {
             <h1 className="text-2xl">My Shopping List</h1>
             <StudentInfo/>
         </div>
-    )
+    );
 }
