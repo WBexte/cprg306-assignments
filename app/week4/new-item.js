@@ -36,25 +36,30 @@ export default function NewItem() {
     }
 
     return (
-        <main>
-            <h1 className="text-2xl">Add New Item</h1>
-            <form onSubmit={handleSubmit}>
-                <label htmlFor="name">Name:</label>
-                <input required id="name" type="text" value={name} onChange={handleNameChange} />
-                <label htmlFor="quantity">Quantity:</label>
                 <input id="quantity" type="number" value={quantity} onChange={handleQuantityChange} />
-                <label htmlFor="category">Category:</label>
-                <select id="category" value={category} onChange={handleCategoryChange}>
-                    <option value="Produce">Produce</option>
-                    <option value="Dairy">Dairy</option>
-                    <option value="Bakery">Bakery</option>
-                    <option value="Meat">Meat</option>
-                    <option value="Canned Goods">Canned Goods</option>
-                    <option value="Dry Goods">Dry Goods</option>
-                    <option value="Household">Household</option>
-                </select>
-                <input type="submit" value="Add" />
-            </form>
+        <main className="flex items-center">
+            <div className="bg-blue-gray-100 flex flex-col max-w-lg border-4 border-indigo-500 rounded-xl bg-indigo-300">
+                <h1 className="text-2xl text-center">Add New Item</h1>
+                <div className="">
+                    <form onSubmit={handleSubmit} className="flex flex-col p-4">
+                        <label htmlFor="name">Name:</label>
+                        <input required id="name" type="text" value={name} onChange={handleNameChange} className="border-2 border-indigo-400 rounded-3xl" />
+                        <label htmlFor="quantity">Quantity:</label>
+                        <input id="quantity" type="number" value={quantity} onChange={handleQuantityChange} className="border-2 border-indigo-400 rounded-3xl" />
+                        <label htmlFor="category">Category:</label>
+                        <select id="category" value={category} onChange={handleCategoryChange} className="border-2 border-indigo-400 rounded-3xl" >
+                            <option value="Produce">Produce</option>
+                            <option value="Dairy">Dairy</option>
+                            <option value="Bakery">Bakery</option>
+                            <option value="Meat">Meat</option>
+                            <option value="Canned Goods">Canned Goods</option>
+                            <option value="Dry Goods">Dry Goods</option>
+                            <option value="Household">Household</option>
+                        </select>
+                        <input type="submit" value="Add" className="border-2 border-indigo-400 rounded-xl bg-white my-2"/>
+                    </form>
+                </div>
+            </div>
         </main>
     )
 
