@@ -36,7 +36,6 @@ export default function NewItem() {
     }
 
     return (
-                <input id="quantity" type="number" value={quantity} onChange={handleQuantityChange} />
         <main className="flex items-center">
             <div className="bg-blue-gray-100 flex flex-col max-w-lg border-4 border-indigo-500 rounded-xl bg-indigo-300">
                 <h1 className="text-2xl text-center">Add New Item</h1>
