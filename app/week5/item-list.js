@@ -21,10 +21,6 @@ export default function ItemList() {
         return;
     }
 
-    const handleClick = () => {
-
-    }
-
 
     return (
         <div className="flex flex-col items-center">
