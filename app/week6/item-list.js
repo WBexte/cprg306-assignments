@@ -4,9 +4,21 @@ import { useState } from "react";
 import Item from "./item";
 
 
-export default function ItemList( items ) {
+export default function ItemList( {items} ) {
 
     const [sortBy, setSortBy] = useState("name");
+
+    if(sortBy === "name") {
+        items.sort((a, b) => {
+            return a.name.localeCompare(b.name);
+        });           
+    } else if (sortBy === "category") {
+        items.sort((a, b) => {
+            return a.category.localeCompare(b.category);
+        });
+    } else {
+        return;
+    }
 
 
     return (
@@ -16,8 +28,8 @@ export default function ItemList( items ) {
                 <button onClick={() => setSortBy("category")} className={`border-2 border-indigo-400 rounded-md bg-white m-2 p-2 ${ sortBy === 'category' ? 'bg-indigo-500' : 'bg-white' }`}>Sort by Category</button>
             </div>
             <ul className="flex flex-col items-center">
-                {items.map((itemData) => (
-                    <Item item={itemData.name} quantity={itemData.quantity} category={itemData.category}/>
+                {items.map((item) => (
+                    <Item item={item.name} quantity={item.quantity} category={item.category}/>
                 ))}
             </ul>
         </div>

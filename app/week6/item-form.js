@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-export default function NewItem( handleAddItems ) {
+export default function NewItem( {onAddItem} ) {
     const [name, setName] = useState("");
     const [quantity, setQuantity] = useState(1);
     const [category, setCategory] = useState("Produce");
@@ -16,7 +16,7 @@ export default function NewItem( handleAddItems ) {
             category: category,
         };
         console.log(item);
-        handleAddItems(item)
+        onAddItem(item)
         // alert(`${item.quantity} ${item.name} added to ${item.category} list!`);
         // Set the form back to default values
         setName("");
