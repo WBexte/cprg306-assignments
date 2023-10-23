@@ -15,8 +15,11 @@ export default function Page() {
     };
 
     const handleItemSelect = (item) => {
-        const parts = item.split(',');
-        const ingredient = parts[0].replace(" ", "_");
+        const cleanString = item.replace(/[\uD800-\uDFFF].*$/, '');
+        console.log("Clean string", cleanString);
+        const parts = cleanString.split(',');
+        const strippedString = parts[0].trim();
+        const ingredient = strippedString.replace(" ", "_");
         console.log("Check out this item!", ingredient);
         setSelectedItem(ingredient);
     };
