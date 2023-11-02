@@ -41,7 +41,7 @@ export default function Page() {
         <main className="flex items-center justify-center h-screen bg-gray-100">
             <div className="bg-white w-96 p-6 rounded shadow-sm">
                 <div className="flex items-center justify-center mb-10 flex-col">
-                    <img src={logo} alt="Logo" className="h-32"/>
+                    <img src="/logo2.jpg" alt="Logo" className="h-32"/>
                     <h3 className="text-gray-700 text-lg font-bold">Successfully Authenticated</h3>
                     <p className="text-gray-700">Welcome to the app, {user.displayName}</p>
                 </div>
