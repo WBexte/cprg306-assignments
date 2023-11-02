@@ -1,8 +1,8 @@
 "use client";
 
 import { useUserAuth } from "./_utils/auth-context";
-import logo from "../../assets/images/logo2.jpg";
 import Link from "next/link";
+
 
 export default function Page() {
     const { user, gitHubSignIn, firebaseSignOut } = useUserAuth();
@@ -12,7 +12,7 @@ export default function Page() {
             <main className="flex items-center justify-center h-screen bg-gray-100">
                 <div className="bg-white w-96 p-6 rounded shadow-sm">
                     <div className="flex items-center justify-center mb-4">
-                        <img src={logo} alt="Logo" className="h-32"/>
+                        <img src="/logo2.jpg" alt="Logo" className="h-32"/>
                     </div>
                     <label className="text-gray-700">Email</label>
                     <input 
