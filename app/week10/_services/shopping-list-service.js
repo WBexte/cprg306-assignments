@@ -2,7 +2,7 @@ import { db } from "../_utils/firebase";
 import { collection, getDocs, addDoc, query, where } from "firebase/firestore";
 
 const getItems = async userId => {
-    const q = query(collection(db, "shopping-list-items"), where("userId", "==", userId));
+    const q = query(collection(db, "users", userId, "items"));
     const querySnapshot = await getDocs(q);
     const items = [];
     querySnapshot.forEach((doc) => {
@@ -12,7 +12,7 @@ const getItems = async userId => {
 }
 
 const addItem = async (userId, item) => {
-    const docRef = await addDoc(collection(db, "shopping-list-items"), {
+    const docRef = await addDoc(collection(db, "users", userId, "items"), {
         userId,
         item,
     });

@@ -54,6 +54,11 @@ export default function Page() {
             <ItemList items={items} onItemSelect={handleItemSelect}/>
             <MealIdeas ingredient={selectedItem}/>
             <p>{ user.uid }</p>
+            <ul>
+                {items.map((item) => (
+                    <li key={item.id}>{item.name}</li>
+                ))}
+            </ul>
         </main>
     );
 }
